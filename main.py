@@ -12,16 +12,15 @@ turtle.shape(image_url)
 count_states =0
 game_is_on = True
 
-answer_state = screen.textinput(title= f"{count_states}/50 States Correct", prompt="What´s another state´s name")
-
 
 data = pandas.read_csv(r"C:\Users\maria\Documents\proyectos python\US-states-game\50_states.csv")
 temp_list = data["state"].to_list()
 
 def add_state():
     state_data = data[data['state'] == answer_state]
-    x_coordinate = state_data.loc[0].at['x']
-    y_coordinate = state_data.loc[0].at['y']
+    print(state_data)
+    x_coordinate = state_data['x'].values[0]
+    y_coordinate = state_data['y'].values[0]
     new_state = turtle.Turtle()
     new_state.penup()
     new_state.hideturtle()
@@ -30,15 +29,17 @@ def add_state():
 
 
 while game_is_on:
-    for state in temp_list:
-        if answer_state == state:
-            count_states += 1
-            add_state()
-            continue
+    answer_state = screen.textinput(title=f"{count_states}/50 States Correct", prompt="What´s another state´s name")
 
-        if count_states == 50:
+    if answer_state in temp_list:
+        count_states += 1
+        add_state()
+        temp_list.remove(answer_state)  # Optional: to prevent duplicate entries
+    else:
+        print(f"{answer_state} is not a valid state.")
+
+    if count_states == 50:
             game_is_on=False
 
-    answer_state = screen.textinput(title=f"{count_states}/50 States Correct", prompt="What´s another state´s name")
 
 screen.exitonclick()
