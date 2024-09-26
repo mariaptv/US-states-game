@@ -52,12 +52,12 @@ Bash
 python main.py
 Usa el código con precaución.
 
-###6. Gameplay
+### 6. Gameplay
 
 * A window with the US map will appear.
-*You'll be prompted to enter the name of a state.
-*If the state is correct, its name will appear on the map.
-*The game keeps track of how many states you've correctly named.
-*The game ends when you've named all 50 states or you close the prompt.
+* You'll be prompted to enter the name of a state.
+* If the state is correct, its name will appear on the map.
+* The game keeps track of how many states you've correctly named.
+* The game ends when you've named all 50 states or you close the prompt.
 
 ![image](https://github.com/user-attachments/assets/7a9ab67e-8255-4c41-84b1-8839da7288fc)
