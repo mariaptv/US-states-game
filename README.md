@@ -35,12 +35,12 @@ This game is designed to help users learn and memorize the names and locations o
 
 **Clone the Repository**
 
-```bash
 git clone [https://github.com/your_username/US-states-game.git](https://github.com/your_username/US-states-game.git)
 cd US-states-game
 
-5. Usage
-Prepare Data Files
+### 5. Usage
+
+**Prepare Data Files**
 
 Ensure that blank_states_img.gif and 50_states.csv are in the same directory as your Python script.
 
